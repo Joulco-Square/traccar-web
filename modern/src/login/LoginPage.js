@@ -196,14 +196,16 @@ const LoginPage = () => {
           </Button>
         )}
         <div className={classes.extraContainer}>
-          <Button
-            className={classes.registerButton}
-            onClick={() => navigate('/register')}
-            disabled={!registrationEnabled}
-            color="secondary"
-          >
-            {t('loginRegister')}
-          </Button>
+          {registrationEnabled && (
+            <Button
+              className={classes.registerButton}
+              onClick={() => navigate('/register')}
+              disabled={!registrationEnabled}
+              color="secondary"
+            >
+              {t('loginRegister')}
+            </Button>
+          )}
           {languageEnabled && (
             <FormControl fullWidth>
               <InputLabel>{t('loginLanguage')}</InputLabel>
